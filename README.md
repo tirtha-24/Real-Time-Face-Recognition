@@ -58,3 +58,5 @@ Face images are passed through the siamese network to generate the feature vecto
 the feature vector resembling to the least eucledian distance and satisfying a threshold is chosen and the name associated with that face is rendered along with a bounding box. Entire process of face detection
 and recognition is processed within milliseconds or its better to say the application is real-time.
 
+## **Result**
+![alt tag](https://user-images.githubusercontent.com/46282986/107887449-3e560100-6f2c-11eb-8b1c-663e4a37b652.JPG)
