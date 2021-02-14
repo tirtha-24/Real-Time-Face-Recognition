@@ -26,17 +26,24 @@ OpenFace is a slight variation of the implementation of FaceNet's NN4 architectu
 Some important takeaways from the FaceNet Paper-
 1. FaceNet directly learns a mapping frorm face images to a compact eucledian space where distances directly correspond to a measure of face similarity.
 2. Triplet loss function is used for training the model.
-3. Hard triplets are used for the sake of effectively learning the model.
+3. Hard triplets are used for the sake of effectively learning the model. For the same, online generation of triplets are used where triplets are selected from mini-batches.
 4. Model is trained with stochastic gradient descent with standard backpropagation and AdaGrad.
 5. Two types of architectures are used, namely zeilur-fergus architecture and inception models.
 6. All models proposed in this paper use ReLu activation function.
 7. Validation rate and false accept rate are used for evaluation of the model.
+
+### **Triplet Loss**
+1. It involves an anchor image, a positive image and a negative image.
+2. The loss function penalizes the model such that the distance between matching examples is reduced and the distance between the non-matching examples is increased.
+3. A parameter called margin is used for the penalty.
+4. Hard triplets are selected for ensuring fast convergence.
 
 ### **Viola Jones Algorithm-Haar Cascade Classifier**
 OpenCV's cascade classifier based on Viola Jones algorithm is used to detect all the faces in the video-capture and then passing the detected face to siamese network for recognition.
 The authors' detector had 6000+ features with 38 stages with 1, 10, 25, 25 and 50 features in the first five stages. In an image, most of the image is non-face region. For this they introduced the concept of Cascade of Classifiers. Instead of applying all 6000 features on a window, 
 the features are grouped into different stages of classifiers and applied one-by-one. If a window fails the first stage, discard it. We don't consider the remaining features on it. If it passes, apply the second stage of features and continue the process. 
 The window which passes all stages is a face region.
+It takes 24x24 pixels window as input. Sliding window technique is used to select windows from the image and then the selected windows are rescaled until the size match the input size that is accepted by the cascade classifier and then that scaled image is fed into the classifier.
 
 ## **Components**
 ### **Data Creation**
