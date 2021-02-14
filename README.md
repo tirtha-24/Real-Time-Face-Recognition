@@ -10,7 +10,7 @@ Concept behind siamese network is that we calculate similarity between 2 images 
 
 ## **Theory**
 ### **One Shot Learning**
-This is all aboutt learning by seeing only one example. Algorithm is provided with only one or very few images per person. Model should be trained so that it can able to predict the correct 
+This is all about learning by seeing only one example. Algorithm is provided with only one or very few images per person. Model should be trained so that it can able to predict the correct 
 face. This idea can be easily implemented with siamese network.
 
 ### **Siamese Network**
@@ -20,7 +20,7 @@ through the same network to create an embedding and then this embedding is match
 score, the face is recognized.
 
 ### **Keras-Implementation of FaceNet, OpenFace**
-OpenFace is a slight variation of the implementation of FaceNet's NN4 architecture, slightly smaller giving an improvement in execution time. Better to train when dataset is small.
+OpenFace is a slight variation of the implementation of FaceNet's NN4 architecture, slightly smaller giving an improvement in execution time. Better to train when dataset is small. Input size corresponds to 96x96 pixels and output size corresponds to a 128-dimensional vector.
 
 ### **FaceNet**
 Some important takeaways from the FaceNet Paper-
